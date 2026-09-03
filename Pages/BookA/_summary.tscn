@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://xyrma6l0hkc1"]
+
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_q5g37"]
+[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_iibql"]
+[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="3_iwb2g"]
+[ext_resource type="Script" uid="uid://dy6sl6chpifw5" path="res://Scripts/summary_line.gd" id="4_pwelv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
+font = ExtResource("3_iwb2g")
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_pwelv"]
+font = ExtResource("3_iwb2g")
+font_size = 45
+font_color = Color(1, 1, 1, 0.77254903)
+
+[node name="Page" type="Node2D" unique_id=1566188694]
+script = ExtResource("1_q5g37")
+page_number = 2
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
+
+[node name="LeftPage" type="Sprite2D" parent="." unique_id=557826736]
+texture = ExtResource("2_iibql")
+offset = Vector2(-364, 0)
+flip_h = true
+
+[node name="Summary Text" type="Label" parent="LeftPage" unique_id=1248955071]
+modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -897.5
+offset_top = -850.0
+offset_right = -556.5
+offset_bottom = -751.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Summary:"
+label_settings = SubResource("LabelSettings_h5uhw")
+horizontal_alignment = 1
+
+[node name="Summary" type="VBoxContainer" parent="LeftPage" unique_id=936144814]
+anchors_preset = -1
+anchor_left = 0.062000003
+anchor_top = 0.025
+anchor_right = 1.0
+anchor_bottom = 0.98100007
+offset_left = -700.136
+offset_top = -247.5
+offset_right = -784.0
+offset_bottom = -538.62006
+
+[node name="Button" type="Button" parent="LeftPage/Summary" unique_id=134495626 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 0"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 0"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button" unique_id=1279341828]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 0: Zero (0)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="LeftPage/Summary" unique_id=1563693932 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 1"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 1"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button2" unique_id=1446479399]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 1: Abstraction (1-6)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button3" type="Button" parent="LeftPage/Summary" unique_id=383264632 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 2"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 2"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button3" unique_id=2044628908]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 2: Antagonistic (7-11)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button4" type="Button" parent="LeftPage/Summary" unique_id=1999188814 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 3"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 3"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button4" unique_id=944638557]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 3: Alignment (12-20)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button5" type="Button" parent="LeftPage/Summary" unique_id=1615714420 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 4"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 4"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button5" unique_id=1410074021]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 4: Application (21-30)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button6" type="Button" parent="LeftPage/Summary" unique_id=851102457 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 5"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 5"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button6" unique_id=1380817038]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 5: Alternation (21-30)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button7" type="Button" parent="LeftPage/Summary" unique_id=1197445084 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 6"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 6"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button7" unique_id=448558200]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 6: Assignment (21-30)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
+texture = ExtResource("2_iibql")
+offset = Vector2(364, 0)
+
+[node name="Summary Text" type="Label" parent="RightPage" unique_id=822195959]
+modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -168.0
+offset_top = -850.0
+offset_right = 173.0
+offset_bottom = -751.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "How to play:"
+label_settings = SubResource("LabelSettings_h5uhw")
+horizontal_alignment = 1
+
+[connection signal="button_down" from="LeftPage/Summary/Button" to="LeftPage/Summary/Button" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button" to="LeftPage/Summary/Button" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button" to="LeftPage/Summary/Button" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button/Label" to="LeftPage/Summary/Button" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button2" to="LeftPage/Summary/Button2" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button2" to="LeftPage/Summary/Button2" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button2" to="LeftPage/Summary/Button2" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button2/Label" to="LeftPage/Summary/Button2" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button3" to="LeftPage/Summary/Button3" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button3" to="LeftPage/Summary/Button3" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button3" to="LeftPage/Summary/Button3" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button3/Label" to="LeftPage/Summary/Button3" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button4" to="LeftPage/Summary/Button4" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button4" to="LeftPage/Summary/Button4" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button4" to="LeftPage/Summary/Button4" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button4/Label" to="LeftPage/Summary/Button4" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button5" to="LeftPage/Summary/Button5" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button5" to="LeftPage/Summary/Button5" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button5" to="LeftPage/Summary/Button5" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button5/Label" to="LeftPage/Summary/Button5" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button6/Label" to="LeftPage/Summary/Button6" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button7" to="LeftPage/Summary/Button7" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button7" to="LeftPage/Summary/Button7" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button7" to="LeftPage/Summary/Button7" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button7/Label" to="LeftPage/Summary/Button7" method="_on_label_mouse_exited"]

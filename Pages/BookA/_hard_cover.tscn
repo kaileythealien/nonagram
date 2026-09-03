@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ix5f5d6qomow"]
+
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_jbmag"]
+[ext_resource type="Texture2D" uid="uid://dw3fvwcubw0i1" path="res://Sprites/book stuff/cover_a_title.png" id="1_p7c2e"]
+[ext_resource type="Texture2D" uid="uid://ds6dy5ss2vfkv" path="res://Sprites/book stuff/cover_a.png" id="2_yk6am"]
+
+[node name="ATitle" type="Node2D" unique_id=1566188694]
+script = ExtResource("1_jbmag")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
+
+[node name="RightPage" type="Sprite2D" parent="." unique_id=1644814259]
+texture = ExtResource("1_p7c2e")
+offset = Vector2(364, 0)
+
+[node name="LeftPage" type="Sprite2D" parent="." unique_id=143123537]
+visible = false
+position = Vector2(-383.99994, 0)
+scale = Vector2(1, 0.99)
+texture = ExtResource("2_yk6am")
+flip_h = true

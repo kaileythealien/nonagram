@@ -1,0 +1,241 @@
+[gd_scene format=3 uid="uid://q0gy1ltc4d1d"]
+
+[ext_resource type="Script" uid="uid://bj10t67eptkgt" path="res://Scripts/table.gd" id="1_561jp"]
+[ext_resource type="Texture2D" uid="uid://b3kqlnrm1beyq" path="res://Sprites/book stuff/bg_cover.png" id="2_561jp"]
+[ext_resource type="PackedScene" uid="uid://ix5f5d6qomow" path="res://Pages/BookA/_hard_cover.tscn" id="2_gmrki"]
+[ext_resource type="Script" uid="uid://vd1dsq85lfr0" path="res://Scripts/save_system.gd" id="3_gmrki"]
+[ext_resource type="Script" uid="uid://bgwm245budvwf" path="res://Scripts/get_page_controller.gd" id="4_mysi6"]
+[ext_resource type="Texture2D" uid="uid://84ukbiqi8s2w" path="res://Sprites/other UI/ui_palette_8.png" id="4_pr2o7"]
+[ext_resource type="Script" uid="uid://bec4efwj3r2l" path="res://Scripts/jewel_selector.gd" id="5_wmey4"]
+[ext_resource type="Texture2D" uid="uid://k3eslqtl6ril" path="res://Sprites/Jewels/selector.png" id="6_rspgj"]
+[ext_resource type="Texture2D" uid="uid://cfxxlndjh85io" path="res://Sprites/Jewels/black_jewel.png" id="6_vtq4u"]
+[ext_resource type="Texture2D" uid="uid://de2kmnabac2cy" path="res://Sprites/Jewels/jewel_highlight.png" id="7_2yld7"]
+[ext_resource type="Texture2D" uid="uid://b3f6ohdobb14g" path="res://Sprites/Jewels/white_jewel.png" id="8_wmey4"]
+[ext_resource type="Texture2D" uid="uid://dyeweu7jasgas" path="res://Sprites/Jewels/zebra_jewel.png" id="9_vtq4u"]
+[ext_resource type="Texture2D" uid="uid://ctpippcfjajj4" path="res://Sprites/Jewels/quog_jewel.png" id="10_2yld7"]
+[ext_resource type="Texture2D" uid="uid://cuw5qcb6c6pcl" path="res://Sprites/Jewels/red_full_jewel.png" id="11_hbdwd"]
+[ext_resource type="Texture2D" uid="uid://vqmdb2lufebb" path="res://Sprites/Jewels/red_empty_jewel.png" id="12_rspgj"]
+[ext_resource type="Texture2D" uid="uid://cbov7rqdro4dc" path="res://Sprites/Jewels/blue_full_jewel.png" id="13_gmrki"]
+[ext_resource type="Texture2D" uid="uid://dd11a83le4j1g" path="res://Sprites/Jewels/blue_empty_jewel.png" id="14_mysi6"]
+[ext_resource type="Texture2D" uid="uid://bf6tvnug0umup" path="res://Sprites/other UI/button_normal.png" id="18_vn8b1"]
+[ext_resource type="Texture2D" uid="uid://d01qmkj6hvrnn" path="res://Sprites/other UI/button_pressed.png" id="19_dqdhh"]
+[ext_resource type="Texture2D" uid="uid://cy61gseq7pyw8" path="res://Sprites/other UI/bookmark_normal.png" id="20_ybnra"]
+[ext_resource type="Texture2D" uid="uid://co3k0fhgm6tr3" path="res://Sprites/other UI/bookmark_clicked.png" id="21_o0qrb"]
+[ext_resource type="Texture2D" uid="uid://buv0fjiq65egb" path="res://Sprites/other UI/bookmark_hovered.png" id="22_2yg4l"]
+
+[node name="Node2D" type="Node2D" unique_id=2030755440]
+script = ExtResource("1_561jp")
+jewel_array = Array[Vector2i]([Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)])
+
+[node name="Page" parent="." unique_id=1566188694 instance=ExtResource("2_gmrki")]
+
+[node name="SaveSystem" type="Node" parent="." unique_id=1598363851]
+script = ExtResource("3_gmrki")
+do_save = true
+
+[node name="SaveSolutions" type="Node" parent="." unique_id=1901064726]
+
+[node name="GetPageController" type="Node" parent="." unique_id=1739270103]
+script = ExtResource("4_mysi6")
+
+[node name="BgCover" type="Sprite2D" parent="." unique_id=1127452076]
+z_index = -999
+texture = ExtResource("2_561jp")
+offset = Vector2(364, 0)
+
+[node name="BgCover2" type="Sprite2D" parent="." unique_id=857313277]
+z_index = -999
+texture = ExtResource("2_561jp")
+offset = Vector2(-364, 0)
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=738699577]
+
+[node name="PreviousPage" type="Button" parent="." unique_id=2026937959]
+modulate = Color(1, 1, 1, 0.18431373)
+z_index = 999
+offset_left = -805.0
+offset_top = -453.0
+offset_right = -593.0
+offset_bottom = 481.0
+
+[node name="NextPage" type="Button" parent="." unique_id=645978318]
+modulate = Color(1, 1, 1, 0.14509805)
+z_index = 999
+offset_left = 610.0
+offset_top = -448.0
+offset_right = 821.0
+offset_bottom = 485.0
+
+[node name="UiPalette8" type="Sprite2D" parent="." unique_id=1977700003 node_paths=PackedStringArray("jewel_sprites")]
+z_index = 100
+position = Vector2(-2.3841858e-07, -539)
+texture = ExtResource("4_pr2o7")
+offset = Vector2(0, 108)
+script = ExtResource("5_wmey4")
+jewel_sprites = [NodePath("jewel_black/jewel_black_sprite"), NodePath("jewel_white/jewel_white_sprite"), NodePath("jewel_zebra/jewel_zebra_sprite"), NodePath("jewel_quog/jewel_quog_sprite"), NodePath("mark_red_full/mark_red_full_sprite"), NodePath("mark_red_empty/mark_red_empty_sprite"), NodePath("mark_blue_full/mark_blue_full_sprite"), NodePath("mark_blue_empty/mark_blue_empty_sprite")]
+
+[node name="Selector" type="Sprite2D" parent="UiPalette8" unique_id=1374752526]
+z_index = 14
+position = Vector2(-393, 62)
+texture = ExtResource("6_rspgj")
+
+[node name="jewel_highlight" type="Sprite2D" parent="UiPalette8" unique_id=376875739]
+z_index = 5
+position = Vector2(-392, 62)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("7_2yld7")
+
+[node name="jewel_black" type="Button" parent="UiPalette8" unique_id=17584264]
+offset_left = -443.0
+offset_top = 11.0
+offset_right = -342.0
+offset_bottom = 112.0
+flat = true
+
+[node name="jewel_black_sprite" type="Sprite2D" parent="UiPalette8/jewel_black" unique_id=1573618652]
+z_index = 7
+position = Vector2(49.9434, 51.779907)
+texture = ExtResource("6_vtq4u")
+
+[node name="jewel_white" type="Button" parent="UiPalette8" unique_id=1134584102]
+offset_left = -336.0
+offset_top = 11.0
+offset_right = -235.0
+offset_bottom = 112.0
+flat = true
+
+[node name="jewel_white_sprite" type="Sprite2D" parent="UiPalette8/jewel_white" unique_id=887461785]
+z_index = 7
+position = Vector2(50.306087, 50.870052)
+texture = ExtResource("8_wmey4")
+
+[node name="jewel_zebra" type="Button" parent="UiPalette8" unique_id=269350314]
+offset_left = -228.0
+offset_top = 11.0
+offset_right = -127.0
+offset_bottom = 112.0
+flat = true
+
+[node name="jewel_zebra_sprite" type="Sprite2D" parent="UiPalette8/jewel_zebra" unique_id=2104704018]
+z_index = 7
+position = Vector2(50, 51)
+texture = ExtResource("9_vtq4u")
+
+[node name="jewel_quog" type="Button" parent="UiPalette8" unique_id=293103427]
+offset_left = -120.0
+offset_top = 12.0
+offset_right = -19.0
+offset_bottom = 113.0
+flat = true
+
+[node name="jewel_quog_sprite" type="Sprite2D" parent="UiPalette8/jewel_quog" unique_id=584548884]
+z_index = 7
+position = Vector2(50, 50)
+texture = ExtResource("10_2yld7")
+
+[node name="mark_red_full" type="Button" parent="UiPalette8" unique_id=1126369342]
+offset_left = 9.0
+offset_top = 11.0
+offset_right = 110.0
+offset_bottom = 112.0
+flat = true
+
+[node name="mark_red_full_sprite" type="Sprite2D" parent="UiPalette8/mark_red_full" unique_id=668557349]
+z_index = 7
+position = Vector2(51, 51)
+texture = ExtResource("11_hbdwd")
+
+[node name="mark_red_empty" type="Button" parent="UiPalette8" unique_id=1025461206]
+offset_left = 116.0
+offset_top = 11.0
+offset_right = 217.0
+offset_bottom = 112.0
+flat = true
+
+[node name="mark_red_empty_sprite" type="Sprite2D" parent="UiPalette8/mark_red_empty" unique_id=245748174]
+z_index = 7
+position = Vector2(51, 51)
+texture = ExtResource("12_rspgj")
+
+[node name="mark_blue_full" type="Button" parent="UiPalette8" unique_id=130666306]
+offset_left = 224.0
+offset_top = 11.0
+offset_right = 325.0
+offset_bottom = 112.0
+flat = true
+
+[node name="mark_blue_full_sprite" type="Sprite2D" parent="UiPalette8/mark_blue_full" unique_id=627906522]
+z_index = 7
+position = Vector2(50, 51)
+texture = ExtResource("13_gmrki")
+
+[node name="mark_blue_empty" type="Button" parent="UiPalette8" unique_id=2017927902]
+offset_left = 332.0
+offset_top = 12.0
+offset_right = 433.0
+offset_bottom = 113.0
+flat = true
+
+[node name="mark_blue_empty_sprite" type="Sprite2D" parent="UiPalette8/mark_blue_empty" unique_id=574621873]
+z_index = 7
+position = Vector2(50, 50)
+texture = ExtResource("14_mysi6")
+
+[node name="Bookmark" type="TextureButton" parent="." unique_id=566855648]
+z_index = 999
+anchors_preset = -1
+anchor_left = 24.000002
+anchor_top = -13.475
+anchor_right = 24.000002
+anchor_bottom = -13.475
+offset_left = -647.0
+offset_top = -492.0
+offset_right = -575.0
+offset_bottom = -343.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("20_ybnra")
+texture_pressed = ExtResource("21_o0qrb")
+texture_hover = ExtResource("22_2yg4l")
+
+[node name="TextureButton2" type="TextureButton" parent="." unique_id=1244659316]
+anchors_preset = -1
+anchor_left = 24.000002
+anchor_top = -13.475
+anchor_right = 24.000002
+anchor_bottom = -13.475
+offset_left = 827.0
+offset_top = -539.0
+offset_right = 956.0
+offset_bottom = -375.0
+texture_normal = ExtResource("18_vn8b1")
+texture_pressed = ExtResource("19_dqdhh")
+
+[connection signal="button_down" from="PreviousPage" to="." method="_on_previous_page_button_down"]
+[connection signal="button_down" from="NextPage" to="." method="_on_next_page_button_down"]
+[connection signal="button_down" from="UiPalette8/jewel_black" to="UiPalette8" method="_on_jewel_button_down" binds= [0]]
+[connection signal="mouse_entered" from="UiPalette8/jewel_black" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [0]]
+[connection signal="mouse_exited" from="UiPalette8/jewel_black" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [0]]
+[connection signal="button_down" from="UiPalette8/jewel_white" to="UiPalette8" method="_on_jewel_button_down" binds= [1]]
+[connection signal="mouse_entered" from="UiPalette8/jewel_white" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [1]]
+[connection signal="mouse_exited" from="UiPalette8/jewel_white" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [1]]
+[connection signal="button_down" from="UiPalette8/jewel_zebra" to="UiPalette8" method="_on_jewel_button_down" binds= [2]]
+[connection signal="mouse_entered" from="UiPalette8/jewel_zebra" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [2]]
+[connection signal="mouse_exited" from="UiPalette8/jewel_zebra" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [2]]
+[connection signal="button_down" from="UiPalette8/jewel_quog" to="UiPalette8" method="_on_jewel_button_down" binds= [3]]
+[connection signal="mouse_entered" from="UiPalette8/jewel_quog" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [3]]
+[connection signal="mouse_exited" from="UiPalette8/jewel_quog" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [3]]
+[connection signal="button_down" from="UiPalette8/mark_red_full" to="UiPalette8" method="_on_jewel_button_down" binds= [4]]
+[connection signal="mouse_entered" from="UiPalette8/mark_red_full" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [4]]
+[connection signal="mouse_exited" from="UiPalette8/mark_red_full" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [4]]
+[connection signal="button_down" from="UiPalette8/mark_red_empty" to="UiPalette8" method="_on_jewel_button_down" binds= [5]]
+[connection signal="mouse_entered" from="UiPalette8/mark_red_empty" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [5]]
+[connection signal="mouse_exited" from="UiPalette8/mark_red_empty" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [5]]
+[connection signal="button_down" from="UiPalette8/mark_blue_full" to="UiPalette8" method="_on_jewel_button_down" binds= [6]]
+[connection signal="mouse_entered" from="UiPalette8/mark_blue_full" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [6]]
+[connection signal="mouse_exited" from="UiPalette8/mark_blue_full" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [6]]
+[connection signal="button_down" from="UiPalette8/mark_blue_empty" to="UiPalette8" method="_on_jewel_button_down" binds= [7]]
+[connection signal="mouse_entered" from="UiPalette8/mark_blue_empty" to="UiPalette8" method="_on_jewel_mouse_entered" binds= [7]]
+[connection signal="mouse_exited" from="UiPalette8/mark_blue_empty" to="UiPalette8" method="_on_jewel_mouse_exited" binds= [7]]
+[connection signal="button_down" from="Bookmark" to="." method="_on_bookmark_button_down"]

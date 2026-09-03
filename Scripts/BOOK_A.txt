@@ -1,0 +1,6 @@
+res://Pages/BookA/_hard_cover.tscn
+res://Pages/BookA/_title_page.tscn
+res://Pages/BookA/_summary.tscn = >Summary<
+res://Pages/BookA/puzzle_1_2.tscn = >1< >2<
+res://Pages/BookA/puzzle_3_4.tscn = >3< >4<
+res://Pages/BookA/puzzle_5_6.tscn = >5< >6< >Vertex 0<

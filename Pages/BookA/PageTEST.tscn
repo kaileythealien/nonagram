@@ -1,0 +1,170 @@
+[gd_scene format=4 uid="uid://bmu71djlmw1j0"]
+
+[ext_resource type="TileSet" uid="uid://dd57ljv2q16ub" path="res://tileset.tres" id="2_bjqmg"]
+[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="4_m8anp"]
+[ext_resource type="Texture2D" uid="uid://co4iy4l5jkm8i" path="res://Sprites/gridb.png" id="5_m8anp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2rq1t"]
+load_path = "res://.godot/imported/page2.png-97ad01d9329b3b4ea72ffb956cdc310b.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_b34hy"]
+font = ExtResource("4_m8anp")
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D" unique_id=388258116]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1017821149]
+
+[node name="Page2" type="Sprite2D" parent="." unique_id=60475472]
+position = Vector2(-7.748604e-05, 0)
+scale = Vector2(0.62096775, 0.615)
+texture = SubResource("CompressedTexture2D_2rq1t")
+metadata/_edit_lock_ = true
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=1774375539]
+position = Vector2(46, 0)
+tile_map_data = PackedByteArray("AAADAP//AAABAAAAAAADAAAAAAABAAAAAAADAP7/AAAAAAIAAAACAP//AAADAAIAAAACAAAAAAADAAIAAAABAP//AAADAAIAAAA=")
+tile_set = ExtResource("2_bjqmg")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=72369901]
+position = Vector2(46, 46)
+tile_map_data = PackedByteArray("AAD7////AQABAAAAAAD6////AQADAAIAAAD7//7/AQAAAAIAAAA=")
+tile_set = ExtResource("2_bjqmg")
+
+[node name="Label" type="Label" parent="." unique_id=437136365]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -528.0
+offset_top = -48.0
+offset_right = -432.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1739919346]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -432.0
+offset_top = -144.0
+offset_right = -336.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=838033407]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_top = -96.0
+offset_right = 336.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "24"
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=2030693863]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 144.0
+offset_top = -96.0
+offset_right = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "24"
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=950103949]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 240.0
+offset_right = 336.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1"
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=1952856308]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 336.0
+offset_top = -192.0
+offset_right = 432.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2"
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=512701814]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 672.0
+offset_top = 432.0
+offset_right = 768.0
+offset_bottom = 528.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "2."
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Label11" type="Label" parent="." unique_id=1615038655]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = 432.0
+offset_right = -672.0
+offset_bottom = 528.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1."
+label_settings = SubResource("LabelSettings_b34hy")
+horizontal_alignment = 1
+
+[node name="Grid" type="Node2D" parent="." unique_id=344338255]
+visible = false
+
+[node name="Gridb2" type="Sprite2D" parent="Grid" unique_id=177691332]
+self_modulate = Color(1, 1, 1, 0.047058824)
+position = Vector2(384, -48)
+texture = ExtResource("5_m8anp")
+
+[node name="Gridb" type="Sprite2D" parent="Grid" unique_id=986434052]
+self_modulate = Color(1, 1, 1, 0.047058824)
+position = Vector2(-384, 0)
+texture = ExtResource("5_m8anp")

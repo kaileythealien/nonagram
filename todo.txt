@@ -1,0 +1,11 @@
+> Save correct pages as a list and create a lock page.
+> Lock and unlock summary entries
+> Recreate the book cover cutscene  and page bg
+> Add bookmark
+> Add back to current button
+> Rework UI
+> Add options
+> Add skip when counting to BOOK definition
+> Make palette ui extend further down
+> Bunch of tutorial stuff
+> ? Make bookmark dissappear whenon summary page or at least non itneractible

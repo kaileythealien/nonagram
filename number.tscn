@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://g4lrhuyfeygk"]
+
+[ext_resource type="Script" uid="uid://evmqx4p1lpfa" path="res://Scripts/number.gd" id="1_l2qg1"]
+[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="2_7fr27"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
+font = ExtResource("2_7fr27")
+font_size = 80
+
+[node name="Button4" type="Button" unique_id=698344605]
+offset_left = -294.0
+offset_top = -147.0
+offset_right = -196.0
+offset_bottom = -49.0
+theme_override_colors/font_color = Color(0.50980395, 0.25490198, 0, 0.5882353)
+theme_override_fonts/font = ExtResource("2_7fr27")
+theme_override_font_sizes/font_size = 70
+text = "?"
+flat = true
+script = ExtResource("1_l2qg1")
+
+[node name="Label" type="Label" parent="." unique_id=477428556]
+modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = -49.0
+offset_right = 49.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_h5uhw")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
