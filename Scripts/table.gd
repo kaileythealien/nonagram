@@ -79,6 +79,7 @@ func FlipPageTo(path_to_page: String, forward: bool = false):
 	NextPage.z_index = -5
 	page.z_index = 5
 	add_child(PageInstance)
+	NextPage.path_to_page = path_to_page
 	
 	# SHOWING / HIDING PALETTE UI
 	if NextPage.GridsToSave != []:
@@ -106,12 +107,12 @@ func SavePage(_page: Page):
 	# TELLS PAGE TO SAVE THE TILESET STATES AND STORES THEM IN SAVE DICT
 	var tilesets_on_page: Array = _page.SavePage()
 	if not tilesets_on_page: return
-	var pageid: String = str(book_id) + str(currentPage)
+	var pageid: String = _page.path_to_page
 	save_system.SavedTilesets.set(pageid,tilesets_on_page)
 
 func LoadPage(_page: Page):
 	# GIVES PAGE TILESETS TO LOAD AND TELLS IT TO LOAD THEM
-	var pageid: String = str(book_id) + str(currentPage)
+	var pageid: String = _page.path_to_page
 	if not save_system.SavedTilesets.keys().has(pageid): return
 	_page.LoadPage(save_system.SavedTilesets[pageid])
 

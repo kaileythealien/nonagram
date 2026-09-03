@@ -1,9 +1,9 @@
 class_name Page extends Node2D
 
 @export var is_cover_page: bool = false
-@export var page_number: int = 0
-@export var book_id: String = "A"
 @export var page_turn_speed: float = 0.1
+
+var path_to_page: String = "default"
 
 @onready var right_page: Sprite2D = $RightPage
 @onready var left_page: Sprite2D = $LeftPage
