@@ -1,4 +1,4 @@
-extends Node2D
+class_name Table extends Node2D
 
 var page: Page
 var NextPage: Page
@@ -12,14 +12,14 @@ var book_id: String = "A"
 var selected_jewel: int = 0
 @export var jewel_array: Array[Vector2i]
 
-@export var pages_numbers: Dictionary
-@onready var save_system: Node = $SaveSystem
-@onready var get_page_controller: GetPageController = $GetPageController
+@export var save_system: Node
+@export var get_page_controller: GetPageController
 
 
 func _ready() -> void:
 	page = $Page
 	page.PreOpen(currentPage)
+	save_system.table = self
 
 func GoToPageByNumber(to_page: int):
 	if is_turning_page: return
@@ -36,7 +36,7 @@ func GoToPageByNumber(to_page: int):
 		print("FAILED")
 		return
 	
-	SavePage(page)
+	save_system.SavePage(page)
 	is_turning_page = true
 	currentPage = to_page
 	
@@ -64,7 +64,7 @@ func GoToPageByDefinition(to_def: String):
 		print("FAILED")
 		return
 	
-	SavePage(page)
+	save_system.SavePage(page)
 	is_turning_page = true
 	currentPage = arr[1]
 	
@@ -89,7 +89,7 @@ func FlipPageTo(path_to_page: String, forward: bool = false):
 	
 	# ANIMATION FIRST HALF
 	NextPage.PreOpen(forward)
-	LoadPage(NextPage)
+	save_system.LoadPage(NextPage)
 	page.Close(forward)
 	await page.animation_finished
 	# ANIMATION SECOND HALF
@@ -103,19 +103,6 @@ func FlipPageTo(path_to_page: String, forward: bool = false):
 	page = NextPage
 	is_turning_page = false
 
-func SavePage(_page: Page):
-	# TELLS PAGE TO SAVE THE TILESET STATES AND STORES THEM IN SAVE DICT
-	var tilesets_on_page: Array = _page.SavePage()
-	if not tilesets_on_page: return
-	var pageid: String = _page.path_to_page
-	save_system.SavedTilesets.set(pageid,tilesets_on_page)
-
-func LoadPage(_page: Page):
-	# GIVES PAGE TILESETS TO LOAD AND TELLS IT TO LOAD THEM
-	var pageid: String = _page.path_to_page
-	if not save_system.SavedTilesets.keys().has(pageid): return
-	_page.LoadPage(save_system.SavedTilesets[pageid])
-
 
 
 func _on_next_page_button_down() -> void:
@@ -124,11 +111,7 @@ func _on_next_page_button_down() -> void:
 func _on_previous_page_button_down() -> void:
 	GoToPageByNumber(currentPage - 1)
 
-func _notification(what):
-	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		SavePage(page)
-		save_system.Save()
-		get_tree().quit()
+
 
 func _on_bookmark_button_down() -> void:
 	GoToPageByDefinition("Summary")

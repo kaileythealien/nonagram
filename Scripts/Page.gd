@@ -1,21 +1,21 @@
 class_name Page extends Node2D
 
-@export var is_cover_page: bool = false
-@export var page_turn_speed: float = 0.1
 
+### SAVING
 var path_to_page: String = "default"
-
-@onready var right_page: Sprite2D = $RightPage
-@onready var left_page: Sprite2D = $LeftPage
-
-signal animation_finished
-
+@export var GridsToSave: Array[TileMapLayer]
 var is_solution_correct: bool = false
 
+### VISUAL
+@export var is_cover_page: bool = false
 var is_looking_up_definition: bool = false
 var looking_up_from_page: int = 0
+signal animation_finished
 
-@export var GridsToSave: Array[TileMapLayer]
+### CONSTANT
+@export var page_turn_speed: float = 0.1
+@onready var right_page: Sprite2D = $RightPage
+@onready var left_page: Sprite2D = $LeftPage
 
 func _ready() -> void:
 	#z_index = -page_number
@@ -33,8 +33,6 @@ func PreOpen(forward:bool):
 		right_page.scale.x = 1
 	else:
 		left_page.scale.x = 1
-	
-	
 
 func Open(forward:bool):
 	
@@ -60,26 +58,50 @@ func Close(forward:bool):
 	await tween.finished
 	animation_finished.emit()
 
-func SavePage():
-	var array_to_return: Array[PackedByteArray]
+func SavePage() -> Dictionary:
+	var tile_data_array: Array[PackedByteArray]
+	
 	is_solution_correct = true
+	
 	for grid_id in GridsToSave:
+		#---------------#
+		#IF ERROR RETURN
+		#---------------#
 		if grid_id == null:
-			push_warning(str(grid_id) + " has grids to save, but no grid attached!")
-			return []
+			push_warning(str(grid_id) + " Has grids to save, but no grid attached!")
+			break
+		
+		#---------------#
+		#GET DATA
+		#---------------#
 		var tilemap_data: PackedByteArray = grid_id.tile_map_data
+		tile_data_array.append(tilemap_data)
+		
+		#---------------#
+		#CHECK SOLUTION
+		#---------------#
 		if tilemap_data != grid_id.solution.tile_map_data:
 			is_solution_correct = false
-		array_to_return.append(tilemap_data)
-	print("SOLUTION IS " + str(is_solution_correct))
-	return array_to_return
+	
+	#---------------#
+	#COMPILE DICT
+	#---------------#
+	var dict_to_return = {
+		"path_to_page" : path_to_page,
+		"tile_data" : tile_data_array,
+		"is_solved": is_solution_correct
+	}
+	
+	return dict_to_return
 
 func LoadPage(array_tilesets):
+	#IF DOESNT NEED LOADING
 	if GridsToSave.is_empty(): return
 	if array_tilesets.is_empty(): return
+	
+	#FOR EACH GRID SET THE GRID TO GRID DUH
 	for grid_id in GridsToSave.size():
 		GridsToSave[grid_id-1].tile_map_data = array_tilesets[grid_id-1]
-	pass
 
 func LookupDefinition(id: String):
 	$"..".GoToPageByDefinition(id)
