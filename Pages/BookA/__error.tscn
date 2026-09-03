@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dfhm4t8hmh57p"]
+
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_2qhpj"]
+[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_2qhpj"]
+[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="3_1kgrb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_akujc"]
+font = ExtResource("3_1kgrb")
+font_size = 80
+
+[node name="ATitle" type="Node2D" unique_id=1566188694]
+script = ExtResource("1_2qhpj")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
+
+[node name="RightPage" type="Sprite2D" parent="." unique_id=1644814259]
+texture = ExtResource("2_2qhpj")
+offset = Vector2(364, 0)
+
+[node name="Summary Text" type="Label" parent="RightPage" unique_id=195551516]
+modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
+anchors_preset = -1
+anchor_left = -0.47100002
+anchor_top = 0.21200001
+anchor_right = -0.47100002
+anchor_bottom = 0.21200001
+offset_left = 391.888
+offset_top = -608.24
+offset_right = 1041.888
+offset_bottom = -509.24
+grow_horizontal = 2
+grow_vertical = 2
+text = "Error Loading Page"
+label_settings = SubResource("LabelSettings_akujc")
+horizontal_alignment = 1
+
+[node name="LeftPage" type="Sprite2D" parent="." unique_id=143123537]
+position = Vector2(-383.99994, 0)
+scale = Vector2(1, 0.99)
+texture = ExtResource("2_2qhpj")
+flip_h = true

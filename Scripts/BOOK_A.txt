@@ -1,6 +1,22 @@
+# use "!" at the beginning of path to put a secret/hidden page
+# only accessible through definitions. like this:
+# error page
+!res://Pages/BookA/__error.tscn = >error<
+
+# INTRO
+
 res://Pages/BookA/_hard_cover.tscn
 res://Pages/BookA/_title_page.tscn
-res://Pages/BookA/_summary.tscn = >Summary<
+res://Pages/BookA/_summary.tscn = >summary<
+
+# VERTEX 1
+
+res://Pages/BookA/_Vertex1_page.tscn = >vertex1<
 res://Pages/BookA/puzzle_1_2.tscn = >1< >2<
 res://Pages/BookA/puzzle_3_4.tscn = >3< >4<
-res://Pages/BookA/puzzle_5_6.tscn = >5< >6< >Vertex 0<
+res://Pages/BookA/puzzle_5_6.tscn = >5< >6<
+res://Pages/BookA/_Vertex2_lock_page.tscn = >vertex2<
+
+# VERTEX 2
+
+res://Pages/BookA/_Vertex2_page.tscn = >vertex2<

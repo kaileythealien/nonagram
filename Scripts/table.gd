@@ -50,9 +50,11 @@ func GoToPageByDefinition(to_def: String):
 	
 	var arr: Array = get_page_controller.GetPathByDefinition(to_def)
 	
+	# NOT LET GO TO SAME ROOM
+	if arr[1] == currentPage: return
 	# NOT LET GO TO SOME BS UNDEFINES NUMBER
 	if arr[1] == 0: return
-	
+
 	# GET DIRECTION
 	var forward: bool = arr[1] > currentPage
 	

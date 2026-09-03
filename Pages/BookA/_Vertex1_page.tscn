@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2ygm10v5h3da"]
+
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_sr0ml"]
+[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_o8w07"]
+[ext_resource type="Texture2D" uid="uid://2upsrcx1syyr" path="res://Sprites/book stuff/vertex/Vertex1.png" id="3_ph5am"]
+
+[node name="Page" type="Node2D" unique_id=1566188694]
+script = ExtResource("1_sr0ml")
+page_number = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
+
+[node name="LeftPage" type="Sprite2D" parent="." unique_id=1644814259]
+texture = ExtResource("2_o8w07")
+offset = Vector2(-364, 0)
+flip_h = true
+
+[node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
+texture = ExtResource("2_o8w07")
+offset = Vector2(364, 0)
+
+[node name="Vertex0" type="Sprite2D" parent="RightPage" unique_id=1089849744]
+self_modulate = Color(1, 1, 1, 0.5372549)
+texture = ExtResource("3_ph5am")
+offset = Vector2(342.965, 0)
