@@ -16,7 +16,6 @@ font_color = Color(1, 1, 1, 0.77254903)
 
 [node name="Page" type="Node2D" unique_id=1566188694]
 script = ExtResource("1_q5g37")
-page_number = 2
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
 
@@ -60,8 +59,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 0"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 0"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button" unique_id=1279341828]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -82,8 +81,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 1"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 1"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button2" unique_id=1446479399]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -105,8 +104,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 2"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 2"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button3" unique_id=2044628908]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -128,8 +127,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 3"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 3"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button4" unique_id=944638557]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -151,8 +150,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 4"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 4"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button5" unique_id=1410074021]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -174,8 +173,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 5"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 5"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button6" unique_id=1380817038]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -197,8 +196,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 6"
 flat = true
 script = ExtResource("4_pwelv")
-override_page_path = NodePath("../../..")
 page_search_tag = "Vertex 6"
+override_page_path = NodePath("../../..")
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button7" unique_id=448558200]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)

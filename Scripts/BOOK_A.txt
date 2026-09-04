@@ -19,4 +19,4 @@ res://Pages/BookA/_Vertex2_lock_page.tscn = >vertex2<
 
 # VERTEX 2
 
-res://Pages/BookA/_Vertex2_page.tscn = >vertex2<
+res://Pages/BookA/_Vertex2_page.tscn

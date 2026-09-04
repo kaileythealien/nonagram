@@ -40,7 +40,6 @@ sources/0 = SubResource("TileSetAtlasSource_a1v1n")
 
 [node name="Page" type="Node2D" unique_id=1566188694 node_paths=PackedStringArray("GridsToSave")]
 script = ExtResource("1_h5uhw")
-page_number = 2
 GridsToSave = [NodePath("RightPage/Tiles/Tokens"), NodePath("LeftPage/Tiles/Tokens")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]

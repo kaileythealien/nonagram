@@ -2,9 +2,16 @@
 
 [ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_o66iy"]
 [ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_rt045"]
+[ext_resource type="Texture2D" uid="uid://cch4v0qr7yu3i" path="res://Sprites/book stuff/lock/lock_default.png" id="3_6xkcw"]
+[ext_resource type="Script" uid="uid://corx868fuykb" path="res://Scripts/lock.gd" id="4_34p05"]
+[ext_resource type="Texture2D" uid="uid://18xlhod32qm8" path="res://Sprites/book stuff/lock/cicle+defqult.png" id="4_if72s"]
+[ext_resource type="PackedScene" uid="uid://hxvyogaqq164" path="res://Pages/BookA/puzzle_1_2.tscn" id="5_6xkcw"]
+[ext_resource type="PackedScene" uid="uid://cx8a3k8utpdxc" path="res://Pages/BookA/puzzle_3_4.tscn" id="6_if72s"]
+[ext_resource type="PackedScene" uid="uid://b3a1j2oqwuxiu" path="res://Pages/BookA/puzzle_5_6.tscn" id="7_toibv"]
 
 [node name="Page" type="Node2D" unique_id=1566188694]
 script = ExtResource("1_o66iy")
+is_next_page_locked = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
 
@@ -16,3 +23,24 @@ flip_h = true
 [node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
 texture = ExtResource("2_rt045")
 offset = Vector2(364, 0)
+
+[node name="Lock" type="Sprite2D" parent="RightPage" unique_id=1273355731]
+z_index = 1
+texture = ExtResource("3_6xkcw")
+offset = Vector2(342.965, 0)
+script = ExtResource("4_34p05")
+PagesToOpen = Array[PackedScene]([ExtResource("5_6xkcw"), ExtResource("6_if72s"), ExtResource("7_toibv")])
+
+[node name="Ring" type="Sprite2D" parent="RightPage/Lock" unique_id=882665984]
+z_index = 1
+position = Vector2(342, -1)
+texture = ExtResource("4_if72s")
+
+[node name="Button" type="Button" parent="RightPage/Lock" unique_id=1462869270]
+offset_left = 183.0
+offset_top = -157.0
+offset_right = 497.0
+offset_bottom = 154.0
+flat = true
+
+[connection signal="button_down" from="RightPage/Lock/Button" to="RightPage/Lock" method="_on_button_button_down"]

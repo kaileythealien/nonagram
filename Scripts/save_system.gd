@@ -1,8 +1,8 @@
 extends Node
 
-var SavedTilesets: Dictionary
+var SavedData: Dictionary
 
-@export var do_save: bool = false
+@export var do_save: bool = true
 
 var table: Table
 
@@ -20,14 +20,15 @@ func SavePage(_page: Page):
 	
 	var pageid: String = page_save_dict["path_to_page"]
 	
-	SavedTilesets.set(pageid,page_save_dict)
+	SavedData.set(pageid,page_save_dict)
+	
 
 func LoadPage(_page: Page):
 	# GIVES PAGE TILESETS TO LOAD AND TELLS IT TO LOAD THEM
 	var pageid: String = _page.path_to_page
-	if not SavedTilesets.keys().has(pageid): return
+	if not SavedData.keys().has(pageid): return
 	
-	_page.LoadPage(SavedTilesets[pageid]["tile_data"])
+	_page.LoadPage(SavedData[pageid])
 
 func LoadGame():
 	#GET THE FILE AND SHIT
@@ -37,6 +38,7 @@ func LoadGame():
 	if parse_err != OK: return
 	var dict = json_object.get_data()
 	
+	"""
 	#SOME CRAZY MAGIC HAPPENING HERE I JUST HOPE ILL NEVER HAVE TO TOUCH IT AGAIN
 	#---------------------#
 	#in all seriousness this mess is supposed to transform "tile_data" of each page from string to
@@ -52,20 +54,23 @@ func LoadGame():
 					dict_tilesets_on_page.append(dict_tileset)
 			dict[dict_page]["tile_data"] = dict_tilesets_on_page
 	#---------------------#
+	"""
+	
 	if dict != {}:
-		SavedTilesets = dict
+		SavedData = dict
+		print(SavedData)
 
 func SaveGame():
 	if not do_save:
 		FileAccess.open("user://savegame.save", FileAccess.WRITE)
 		return
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)
-	var json_string = JSON.stringify(SavedTilesets)
+	var json_string = JSON.stringify(SavedData)
 	save_file.store_line(json_string)
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		#CODE THAT MAKES YOU'RE PENIS LARGER (AND SAVES THE GAME ON APPLICATION QUIT)
-		SavePage($"../..".page)
+		SavePage(table.page)
 		SaveGame()
 		get_tree().quit()

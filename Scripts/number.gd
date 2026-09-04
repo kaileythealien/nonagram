@@ -1,8 +1,7 @@
 extends Button
 
-var doubleclick_timer: int
+var doubleclick_timer: float
 @export var requires_double_click: bool = true
-@export var override_page_path: Page
 
 func _ready() -> void:
 	$Label.text = text
@@ -14,9 +13,6 @@ func _process(delta: float) -> void:
 
 func _on_button_down() -> void:
 	if doubleclick_timer > 0 or (not requires_double_click):
-		if override_page_path == null:
-			$"../..".LookupDefinition($Label.text)
-		else:
-			override_page_path.LookupDefinition($Label.text)
+		PageScroll.GoToPageByDefinition($Label.text, true)
 		return
-	doubleclick_timer = 50
+	doubleclick_timer = 0.2

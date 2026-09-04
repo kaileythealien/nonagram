@@ -6,9 +6,7 @@ extends Sprite2D
 
 var Selected: int = 0
 
-
-func _ready():
-	$"..".jewel_palette = self
+var table: Table
 
 func _on_jewel_mouse_entered(n: int) -> void:
 	if n >= jewel_sprites.size():
@@ -26,7 +24,7 @@ func _on_jewel_mouse_exited(n: int) -> void:
 	jewel_highlight.hide()
 
 func _on_jewel_button_down(n: int) -> void:
-	$"..".selected_jewel = n
+	table.selected_jewel = n
 	selector.global_position = jewel_sprites[n].global_position
 
 func show_palette():

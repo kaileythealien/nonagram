@@ -1,6 +1,6 @@
 extends Button
 
-var doubleclick_timer: int
+var doubleclick_timer: float
 @export var override_page_path: Page
 @export var page_search_tag: String = ""
 @export var selector_char: String = "⮚ "
@@ -22,7 +22,7 @@ func _on_button_down() -> void:
 		txt = text
 	else:
 		txt = page_search_tag
-	override_page_path.LookupDefinition(txt)
+	PageScroll.GoToPageByDefinition(txt, false)
 	
 
 func _on_mouse_entered() -> void:

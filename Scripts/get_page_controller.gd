@@ -51,3 +51,9 @@ func GetPathByDefinition(id: String = "1") -> Array:
 	
 	push_warning("UNKNOWN DEFINITION: \"" + id + "\"")
 	return ["res://Pages/BookA/__error.tscn",0]
+
+func getIDFromPath(path: String) -> int:
+	for index in all_pages_array.size():
+		if all_pages_array[index-1].findn(path) != -1:
+			return index-1
+	return -1
