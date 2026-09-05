@@ -17,6 +17,7 @@ var selected_jewel: int = 0
 @export var get_page_controller: GetPageController
 @export var return_to_previous_button: Button
 @export var jewel_palette: Sprite2D
+@export var input_controller: Node
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _ready() -> void:
 	
 	SaveSystem.table = self
 	PageScroll.table = self
+	input_controller.table = self
 	
 	return_to_previous_button.table = self
 	jewel_palette.table = self
@@ -72,3 +74,7 @@ func _on_previous_page_button_down() -> void:
 
 func _on_bookmark_button_down() -> void:
 	PageScroll.GoToPageByDefinition("Summary")
+
+# DEBUG RESET SAVEFILE
+func _on_previous_page_2_button_down() -> void:
+	SaveSystem.SavedData.clear()

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bj10t67eptkgt" path="res://Scripts/table.gd" id="1_561jp"]
 [ext_resource type="Texture2D" uid="uid://b3kqlnrm1beyq" path="res://Sprites/book stuff/bg_cover.png" id="2_561jp"]
 [ext_resource type="PackedScene" uid="uid://ix5f5d6qomow" path="res://Pages/BookA/_hard_cover.tscn" id="2_gmrki"]
+[ext_resource type="Script" uid="uid://jlper04om62j" path="res://input_controller.gd" id="3_o0qrb"]
 [ext_resource type="Script" uid="uid://bgwm245budvwf" path="res://Scripts/get_page_controller.gd" id="4_mysi6"]
 [ext_resource type="Texture2D" uid="uid://84ukbiqi8s2w" path="res://Sprites/other UI/ui_palette_8.png" id="4_pr2o7"]
 [ext_resource type="Script" uid="uid://bec4efwj3r2l" path="res://Scripts/jewel_selector.gd" id="5_wmey4"]
@@ -23,12 +24,13 @@
 [ext_resource type="Texture2D" uid="uid://buv0fjiq65egb" path="res://Sprites/other UI/bookmark_hovered.png" id="22_2yg4l"]
 [ext_resource type="Script" uid="uid://be8tci3st4iop" path="res://Scripts/return_to_current_button.gd" id="23_o0qrb"]
 
-[node name="Node2D" type="Node2D" unique_id=2030755440 node_paths=PackedStringArray("get_page_controller", "return_to_previous_button", "jewel_palette")]
+[node name="Node2D" type="Node2D" unique_id=2030755440 node_paths=PackedStringArray("get_page_controller", "return_to_previous_button", "jewel_palette", "input_controller")]
 script = ExtResource("1_561jp")
 jewel_array = Array[Vector2i]([Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4)])
 get_page_controller = NodePath("Controllers/GetPageController")
 return_to_previous_button = NodePath("UI/ReturnTo")
 jewel_palette = NodePath("UI/UiPalette8")
+input_controller = NodePath("Controllers/InputController")
 
 [node name="Controllers" type="Node" parent="." unique_id=510073133]
 
@@ -36,6 +38,9 @@ jewel_palette = NodePath("UI/UiPalette8")
 
 [node name="GetPageController" type="Node" parent="Controllers" unique_id=1739270103]
 script = ExtResource("4_mysi6")
+
+[node name="InputController" type="Node" parent="Controllers" unique_id=789384480]
+script = ExtResource("3_o0qrb")
 
 [node name="Page" parent="." unique_id=1566188694 instance=ExtResource("2_gmrki")]
 
@@ -229,6 +234,14 @@ pivot_offset = Vector2(300, 0)
 text = "RETURN TO CURRENT"
 script = ExtResource("23_o0qrb")
 
+[node name="PreviousPage2" type="Button" parent="UI" unique_id=1538075435]
+z_index = 999
+offset_left = -946.0
+offset_top = -530.0
+offset_right = -751.0
+offset_bottom = -467.0
+text = "RESET SAVFILE"
+
 [connection signal="button_down" from="UI/PreviousPage" to="." method="_on_previous_page_button_down"]
 [connection signal="button_down" from="UI/NextPage" to="." method="_on_next_page_button_down"]
 [connection signal="button_down" from="UI/UiPalette8/jewel_black" to="UI/UiPalette8" method="_on_jewel_button_down" binds= [0]]
@@ -257,3 +270,4 @@ script = ExtResource("23_o0qrb")
 [connection signal="mouse_exited" from="UI/UiPalette8/mark_blue_empty" to="UI/UiPalette8" method="_on_jewel_mouse_exited" binds= [7]]
 [connection signal="button_down" from="UI/Bookmark" to="." method="_on_bookmark_button_down"]
 [connection signal="button_down" from="UI/ReturnTo" to="UI/ReturnTo" method="_on_button_down"]
+[connection signal="button_down" from="UI/PreviousPage2" to="." method="_on_previous_page_2_button_down"]

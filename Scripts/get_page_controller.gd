@@ -48,9 +48,11 @@ func GetPathByDefinition(id: String = "1") -> Array:
 			path_to_page = all_pages_array_definitions_only[index-1].split(" = ")[0].right(-1)
 			return [path_to_page,1000+index]
 	for index in all_pages_array.size():
-		if all_pages_array[index-1].findn(">" + id + "<") != -1:
-			def_at = index-1
-			path_to_page = all_pages_array[index-1].split(" = ")[0]
+		
+		if all_pages_array[index].findn(">" + id + "<") != -1:
+			def_at = index
+			path_to_page = all_pages_array[index].split(" = ")[0]
+			print(def_at)
 			return [path_to_page,def_at]
 	
 	push_warning("UNKNOWN DEFINITION: \"" + id + "\"")

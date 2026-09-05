@@ -5,10 +5,7 @@
 [ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="3_mvws6"]
 [ext_resource type="Texture2D" uid="uid://cluedv3cusxm7" path="res://Sprites/tileset.png" id="4_6n61r"]
 [ext_resource type="Script" uid="uid://c3a4yr4orkfm0" path="res://Scripts/PuzzleGrid.gd" id="5_5nslg"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
-font = ExtResource("3_mvws6")
-font_size = 80
+[ext_resource type="PackedScene" uid="uid://g4lrhuyfeygk" path="res://number.tscn" id="6_lu61u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1v1n"]
 texture = ExtResource("4_6n61r")
@@ -38,9 +35,12 @@ texture_region_size = Vector2i(98, 98)
 tile_size = Vector2i(98, 98)
 sources/0 = SubResource("TileSetAtlasSource_a1v1n")
 
+[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
+font = ExtResource("3_mvws6")
+font_size = 80
+
 [node name="Page" type="Node2D" unique_id=1566188694 node_paths=PackedStringArray("GridsToSave")]
 script = ExtResource("1_7vvhe")
-page_number = 2
 GridsToSave = [NodePath("RightPage/Tiles/Tokens"), NodePath("LeftPage/Tiles/Tokens")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
@@ -49,24 +49,6 @@ GridsToSave = [NodePath("RightPage/Tiles/Tokens"), NodePath("LeftPage/Tiles/Toke
 texture = ExtResource("2_lu61u")
 offset = Vector2(-364, 0)
 flip_h = true
-
-[node name="Label2" type="Label" parent="LeftPage" unique_id=1248955071]
-modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -756.0
-offset_top = -657.0
-offset_right = -658.0
-offset_bottom = -558.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_h5uhw")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Tiles" type="TileMapLayer" parent="LeftPage" unique_id=504928252]
 position = Vector2(0, 49)
@@ -97,6 +79,11 @@ grow_vertical = 2
 text = "5."
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
+
+[node name="Button4" parent="LeftPage" unique_id=698344605 instance=ExtResource("6_lu61u")]
+offset_left = -392.0
+offset_right = -294.0
+text = "1"
 
 [node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
 texture = ExtResource("2_lu61u")
@@ -133,38 +120,16 @@ text = "6."
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="RightPage" unique_id=1579160371]
-modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -706.0
-offset_right = 28.0
-offset_bottom = -607.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Button4" parent="RightPage" unique_id=162621918 instance=ExtResource("6_lu61u")]
+offset_left = 294.0
+offset_top = -196.0
+offset_right = 392.0
+offset_bottom = -98.0
 text = "1"
-label_settings = SubResource("LabelSettings_h5uhw")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
-[node name="Label7" type="Label" parent="RightPage" unique_id=309268815]
-modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -70.0
-offset_top = -804.0
-offset_right = 28.0
-offset_bottom = -705.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Button5" parent="RightPage" unique_id=35738356 instance=ExtResource("6_lu61u")]
+offset_left = 294.0
+offset_top = -294.0
+offset_right = 392.0
+offset_bottom = -196.0
 text = "1"
-label_settings = SubResource("LabelSettings_h5uhw")
-horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true

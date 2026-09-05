@@ -59,8 +59,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 0"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 0"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 0"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button" unique_id=1279341828]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -81,8 +81,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 1"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 1"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 1"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button2" unique_id=1446479399]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -104,8 +104,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 2"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 2"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 2"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button3" unique_id=2044628908]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -127,8 +127,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 3"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 3"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 3"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button4" unique_id=944638557]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -150,8 +150,8 @@ theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
 text = "Vertex 4"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 4"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 4"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button5" unique_id=1410074021]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -161,7 +161,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Chapter 4: Application (21-30)"
+text = "Chapter 4: Asymmetry (21-30)"
+label_settings = SubResource("LabelSettings_pwelv")
+vertical_alignment = 1
+clip_text = true
+
+[node name="Button8" type="Button" parent="LeftPage/Summary" unique_id=1422431561 node_paths=PackedStringArray("override_page_path")]
+custom_minimum_size = Vector2(0, 55.725)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
+text = "Vertex 5"
+flat = true
+script = ExtResource("4_pwelv")
+override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 4"
+
+[node name="Label" type="Label" parent="LeftPage/Summary/Button8" unique_id=72296300]
+modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Chapter 5: Application (21-30)"
 label_settings = SubResource("LabelSettings_pwelv")
 vertical_alignment = 1
 clip_text = true
@@ -170,11 +193,11 @@ clip_text = true
 custom_minimum_size = Vector2(0, 55.725)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
-text = "Vertex 5"
+text = "Vertex 6"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 5"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 5"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button6" unique_id=1380817038]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -184,7 +207,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Chapter 5: Alternation (21-30)"
+text = "Chapter 6: Alternation (21-30)"
 label_settings = SubResource("LabelSettings_pwelv")
 vertical_alignment = 1
 clip_text = true
@@ -193,11 +216,11 @@ clip_text = true
 custom_minimum_size = Vector2(0, 55.725)
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8745098, 0.8745098, 0.8745098, 0)
-text = "Vertex 6"
+text = "Vertex 7"
 flat = true
 script = ExtResource("4_pwelv")
-page_search_tag = "Vertex 6"
 override_page_path = NodePath("../../..")
+page_search_tag = "Vertex 6"
 
 [node name="Label" type="Label" parent="LeftPage/Summary/Button7" unique_id=448558200]
 modulate = Color(0.50980395, 0.25490198, 0, 0.63529414)
@@ -207,7 +230,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Chapter 6: Assignment (21-30)"
+text = "Chapter 7: Assignment (21-30)"
 label_settings = SubResource("LabelSettings_pwelv")
 vertical_alignment = 1
 clip_text = true
@@ -253,6 +276,10 @@ horizontal_alignment = 1
 [connection signal="mouse_entered" from="LeftPage/Summary/Button5" to="LeftPage/Summary/Button5" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LeftPage/Summary/Button5" to="LeftPage/Summary/Button5" method="_on_mouse_exited"]
 [connection signal="mouse_exited" from="LeftPage/Summary/Button5/Label" to="LeftPage/Summary/Button5" method="_on_label_mouse_exited"]
+[connection signal="button_down" from="LeftPage/Summary/Button8" to="LeftPage/Summary/Button8" method="_on_button_down"]
+[connection signal="mouse_entered" from="LeftPage/Summary/Button8" to="LeftPage/Summary/Button8" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button8" to="LeftPage/Summary/Button8" method="_on_mouse_exited"]
+[connection signal="mouse_exited" from="LeftPage/Summary/Button8/Label" to="LeftPage/Summary/Button8" method="_on_label_mouse_exited"]
 [connection signal="button_down" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_button_down"]
 [connection signal="mouse_entered" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="LeftPage/Summary/Button6" to="LeftPage/Summary/Button6" method="_on_mouse_exited"]

@@ -1,0 +1,355 @@
+[gd_scene format=3 uid="uid://ctagq5xqnqie0"]
+
+[ext_resource type="Texture2D" uid="uid://bhq0aqo6p01i3" path="res://Sprites/book stuff/lock/icon_none.png" id="1_3qqdh"]
+[ext_resource type="Script" uid="uid://corx868fuykb" path="res://Scripts/lock.gd" id="2_65ask"]
+[ext_resource type="PackedScene" uid="uid://hxvyogaqq164" path="res://Pages/BookA/puzzle_1_2.tscn" id="3_8dpf7"]
+[ext_resource type="PackedScene" uid="uid://cx8a3k8utpdxc" path="res://Pages/BookA/puzzle_3_4.tscn" id="4_v16eo"]
+[ext_resource type="PackedScene" uid="uid://b3a1j2oqwuxiu" path="res://Pages/BookA/puzzle_5_6.tscn" id="5_v4lt7"]
+[ext_resource type="Texture2D" uid="uid://bkpm4p08luw2j" path="res://Sprites/book stuff/lock/lock_circle_left.png" id="6_vgbcr"]
+[ext_resource type="Texture2D" uid="uid://b7yign61355d4" path="res://Sprites/book stuff/lock/lock_circle_cap_left.png" id="7_lgqjc"]
+[ext_resource type="Texture2D" uid="uid://tvg38a1pnnvy" path="res://Sprites/book stuff/lock/lock_circle_right.png" id="8_seh3r"]
+[ext_resource type="Texture2D" uid="uid://bk1ehurjsuklt" path="res://Sprites/book stuff/lock/lock_circle_cap_right.png" id="9_xbc1k"]
+[ext_resource type="Texture2D" uid="uid://p1b48b2k43vi" path="res://Sprites/book stuff/lock/lock_base.png" id="10_wfno4"]
+[ext_resource type="Texture2D" uid="uid://dly51nivt7f6e" path="res://Sprites/book stuff/lock/lock_top.png" id="11_aw6ce"]
+[ext_resource type="Texture2D" uid="uid://d8he88vo4pkr" path="res://Sprites/book stuff/lock/lock_circle_clicker_left.png" id="12_0m6p7"]
+[ext_resource type="Texture2D" uid="uid://qdh6qsxbkt7y" path="res://Sprites/book stuff/lock/lock_circle_clicker_right.png" id="13_qce2j"]
+
+[sub_resource type="Animation" id="Animation_0avrj"]
+resource_name = "Open"
+length = 5.266667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left/circles_right2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.4, 1.5666666, 4.733333, 4.8),
+"transitions": PackedFloat32Array(1, 19.69832, 19.69832, 4.756827, 1, 4.2870927),
+"update": 0,
+"values": [0.0, -0.10471976, -0.05235988, -1.0471975511965976, -1.0471976, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right/circles_right2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334, 0.4, 1.5666666, 4.733333, 4.8),
+"transitions": PackedFloat32Array(1, 19.69832, 19.69832, 4.756827, 1, 4.2870927),
+"update": 0,
+"values": [0.0, -0.10471976, -0.05235988, -1.0471975511965976, -1.0471976, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.0333335, 2.1000001, 2.2333336, 2.666667, 2.9333336, 3.666667, 4, 4.033334, 4.1000004, 4.133334, 4.200001, 4.2333336, 4.5666666, 4.700001, 4.7333336),
+"transitions": PackedFloat32Array(1, 1, 1, 7.7274833, 7.7274833, 1, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 0.84089655, 0.84089655),
+"update": 0,
+"values": [Vector2(343, 57), Vector2(343, 56), Vector2(343, 56), Vector2(343, 56), Vector2(343, 43), Vector2(343, 43), Vector2(343, 49), Vector2(343, 49.66667), Vector2(343, 49), Vector2(343, 49.66667), Vector2(343, 49), Vector2(343, 49.66667), Vector2(343, 46.547), Vector2(343, 46.547), Vector2(343, 57)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(2.0333335, 2.1000001, 2.2, 2.6666667, 2.9333334, 3.6666667, 4, 4.033334, 4.1000004, 4.133334, 4.2000003, 4.233334, 4.5666666, 4.7000003, 4.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 7.7274833, 7.7274833, 1, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848, 3.3635848),
+"update": 0,
+"values": [Vector2(343, 57), Vector2(343, 58.97), Vector2(343, 58.97), Vector2(343, 58.97), Vector2(343, 71.115), Vector2(343, 71.115), Vector2(343, 65), Vector2(343, 63.92), Vector2(343, 65), Vector2(343, 63.92), Vector2(343, 65), Vector2(343, 63.92), Vector2(343, 69.322), Vector2(343, 69.322), Vector2(343, 57)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightPage/Lock/LockSprites/clicker_left:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.6666667, 3.4),
+"transitions": PackedFloat32Array(22.627394, 22.627394),
+"update": 0,
+"values": [Vector2(285, 94), Vector2(248, 94)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightPage/Lock/LockSprites/clicker_right:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.6666667, 3.4),
+"transitions": PackedFloat32Array(22.627394, 22.627394),
+"update": 0,
+"values": [Vector2(403, 22), Vector2(441.38, 22)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RightPage/Lock/LockSprites/top:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(4.1000004, 4.133333, 4.2333336, 4.7333336, 5.099999, 5.2, 5.233332),
+"transitions": PackedFloat32Array(1, 1, 5.4641585, 5.4641585, 0.3298786, 0.12940806, 1),
+"update": 0,
+"values": [Vector2(343, 0), Vector2(343, -1.715), Vector2(343, -1.715), Vector2(343, -1.715), Vector2(343, -4.785), Vector2(343, -51), Vector2(343, -51)]
+}
+
+[sub_resource type="Animation" id="Animation_ruqbw"]
+resource_name = "Opened"
+length = 0.033333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left/circles_right2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right/circles_right2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(0.84089655),
+"update": 0,
+"values": [Vector2(343, 57)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(3.3635848),
+"update": 0,
+"values": [Vector2(343, 57)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightPage/Lock/LockSprites/clicker_left:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(22.627394),
+"update": 0,
+"values": [Vector2(248, 94)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightPage/Lock/LockSprites/clicker_right:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(22.627394),
+"update": 0,
+"values": [Vector2(441.38, 22)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RightPage/Lock/LockSprites/top:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(343, -51)]
+}
+
+[sub_resource type="Animation" id="Animation_irru0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left/circles_right2:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right/circles_right2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RightPage/Lock/LockSprites/circles/circles_left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(343, 57)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RightPage/Lock/LockSprites/circles/circles_right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(343, 57)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RightPage/Lock/LockSprites/clicker_left:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(285, 94)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RightPage/Lock/LockSprites/clicker_right:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(403, 22)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RightPage/Lock/LockSprites/top:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(343, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k8kkk"]
+_data = {
+&"Open": SubResource("Animation_0avrj"),
+&"Opened": SubResource("Animation_ruqbw"),
+&"RESET": SubResource("Animation_irru0")
+}
+
+[node name="Lock" type="Sprite2D" unique_id=683368118]
+z_index = 1
+texture = ExtResource("1_3qqdh")
+offset = Vector2(342.965, 0)
+script = ExtResource("2_65ask")
+PagesToOpen = Array[PackedScene]([ExtResource("3_8dpf7"), ExtResource("4_v16eo"), ExtResource("5_v4lt7")])
+
+[node name="Ring" type="Sprite2D" parent="." unique_id=537716476]
+z_index = 1
+position = Vector2(342, -1)
+texture = ExtResource("1_3qqdh")
+
+[node name="Button" type="Button" parent="." unique_id=975924467]
+offset_left = 183.0
+offset_top = -157.0
+offset_right = 497.0
+offset_bottom = 154.0
+flat = true
+
+[node name="LockSprites" type="Node2D" parent="." unique_id=804104053]
+z_index = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LockSprites" unique_id=1803416043]
+root_node = NodePath("../../../..")
+libraries/ = SubResource("AnimationLibrary_k8kkk")
+
+[node name="circles" type="Node2D" parent="LockSprites" unique_id=1638573845]
+z_index = 1
+
+[node name="circles_left" type="Sprite2D" parent="LockSprites/circles" unique_id=2109435880]
+z_index = 1
+position = Vector2(343, 57)
+texture = ExtResource("6_vgbcr")
+
+[node name="circles_right2" type="Sprite2D" parent="LockSprites/circles/circles_left" unique_id=648624240]
+z_index = 1
+position = Vector2(0, 1)
+texture = ExtResource("7_lgqjc")
+
+[node name="circles_right" type="Sprite2D" parent="LockSprites/circles" unique_id=616648962]
+z_index = 1
+position = Vector2(343, 57)
+texture = ExtResource("8_seh3r")
+
+[node name="circles_right2" type="Sprite2D" parent="LockSprites/circles/circles_right" unique_id=1329928292]
+z_index = 1
+position = Vector2(0, 1)
+texture = ExtResource("9_xbc1k")
+
+[node name="base" type="Sprite2D" parent="LockSprites" unique_id=640060256]
+z_index = 1
+position = Vector2(343, 0)
+texture = ExtResource("10_wfno4")
+
+[node name="top" type="Sprite2D" parent="LockSprites" unique_id=61307893]
+position = Vector2(343, 0)
+texture = ExtResource("11_aw6ce")
+
+[node name="clicker_left" type="Sprite2D" parent="LockSprites" unique_id=45983874]
+z_index = 3
+position = Vector2(285, 94)
+texture = ExtResource("12_0m6p7")
+
+[node name="clicker_right" type="Sprite2D" parent="LockSprites" unique_id=2034172175]
+z_index = 3
+position = Vector2(403, 22)
+texture = ExtResource("13_qce2j")
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

@@ -128,9 +128,17 @@ func LoadPage(page_data):
 	has_been_touched = page_data["has_been_touched"]
 	is_next_page_locked = page_data["is_next_page_locked"]
 	
-	
-	
 
+
+func DebugAutosolve() -> void:
+	for grid_id in GridsToSave:
+		var solution_data: String = grid_id.TilesetToString(grid_id.solution)
+		grid_id.StringToTileset(solution_data)
+	if lock:
+		lock.SkipToWin()
+	has_been_touched = true
+	is_solution_correct = true
+	is_next_page_locked = false
 
 func LookupDefinition(id: String, allow_return: bool):
 	table.GoToPageByDefinition(id,allow_return)

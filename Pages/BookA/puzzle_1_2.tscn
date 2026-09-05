@@ -5,10 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cluedv3cusxm7" path="res://Sprites/tileset.png" id="3_haqoe"]
 [ext_resource type="Script" uid="uid://c3a4yr4orkfm0" path="res://Scripts/PuzzleGrid.gd" id="4_haqoe"]
 [ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="4_inm8r"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
-font = ExtResource("3_6dtyl")
-font_size = 80
+[ext_resource type="PackedScene" uid="uid://g4lrhuyfeygk" path="res://number.tscn" id="6_hn1cu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1v1n"]
 texture = ExtResource("3_haqoe")
@@ -38,6 +35,10 @@ texture_region_size = Vector2i(98, 98)
 tile_size = Vector2i(98, 98)
 sources/0 = SubResource("TileSetAtlasSource_a1v1n")
 
+[sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
+font = ExtResource("3_6dtyl")
+font_size = 80
+
 [node name="Page" type="Node2D" unique_id=1566188694 node_paths=PackedStringArray("GridsToSave")]
 script = ExtResource("1_h5uhw")
 GridsToSave = [NodePath("RightPage/Tiles/Tokens"), NodePath("LeftPage/Tiles/Tokens")]
@@ -49,26 +50,9 @@ texture = ExtResource("4_inm8r")
 offset = Vector2(-364, 0)
 flip_h = true
 
-[node name="Label2" type="Label" parent="LeftPage" unique_id=1248955071]
-modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -756.0
-offset_top = -657.0
-offset_right = -658.0
-offset_bottom = -558.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_h5uhw")
-horizontal_alignment = 1
-
 [node name="Tiles" type="TileMapLayer" parent="LeftPage" unique_id=504928252]
 position = Vector2(0, 49)
-tile_map_data = PackedByteArray(0, 0, 252, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 254, 255, 0, 0, 0, 0, 1, 0, 0, 0, 251, 255, 255, 255, 0, 0, 1, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 252, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 251, 255, 255, 255, 0, 0, 1, 0, 1, 0, 0, 0, 252, 255, 254, 255, 0, 0, 0, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_efio1")
 
 [node name="Solution" type="TileMapLayer" parent="LeftPage/Tiles" unique_id=2037555520]
@@ -79,24 +63,7 @@ tile_set = SubResource("TileSet_efio1")
 tile_set = SubResource("TileSet_efio1")
 script = ExtResource("4_haqoe")
 
-[node name="Label3" type="Label" parent="LeftPage" unique_id=1068670881]
-modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -854.0
-offset_top = -559.0
-offset_right = -756.0
-offset_bottom = -460.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "1"
-label_settings = SubResource("LabelSettings_h5uhw")
-horizontal_alignment = 1
-
-[node name="Label4" type="Label" parent="LeftPage" unique_id=1062826054]
+[node name="Label3" type="Label" parent="LeftPage" unique_id=1753507204]
 modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
 anchors_preset = 8
 anchor_left = 0.5
@@ -109,9 +76,21 @@ offset_right = -952.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1."
+text = "2."
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
+
+[node name="3" parent="LeftPage" unique_id=698344605 instance=ExtResource("6_hn1cu")]
+offset_left = -392.0
+offset_right = -294.0
+text = "1"
+
+[node name="2" parent="LeftPage" unique_id=1051599454 instance=ExtResource("6_hn1cu")]
+offset_left = -490.0
+offset_top = -49.0
+offset_right = -392.0
+offset_bottom = 49.0
+text = "1"
 
 [node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
 texture = ExtResource("4_inm8r")
@@ -196,3 +175,24 @@ grow_vertical = 2
 text = "2"
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
+
+[node name="2" parent="RightPage" unique_id=2086459600 instance=ExtResource("6_hn1cu")]
+offset_left = 196.0
+offset_top = -98.0
+offset_right = 294.0
+offset_bottom = 0.0
+text = "1"
+
+[node name="3" parent="RightPage" unique_id=1622602867 instance=ExtResource("6_hn1cu")]
+offset_left = 196.0
+offset_top = 0.0
+offset_right = 294.0
+offset_bottom = 98.0
+text = "1"
+
+[node name="4" parent="RightPage" unique_id=2113334475 instance=ExtResource("6_hn1cu")]
+offset_left = 294.0
+offset_top = -196.0
+offset_right = 392.0
+offset_bottom = -98.0
+text = "2"

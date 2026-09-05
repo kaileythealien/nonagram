@@ -9,14 +9,40 @@ res://Pages/BookA/_hard_cover.tscn
 res://Pages/BookA/_title_page.tscn
 res://Pages/BookA/_summary.tscn = >summary<
 
-# VERTEX 1
+# VERTEX 1 - Abstraction
 
 res://Pages/BookA/_Vertex1_page.tscn = >vertex1<
 res://Pages/BookA/puzzle_1_2.tscn = >1< >2<
 res://Pages/BookA/puzzle_3_4.tscn = >3< >4<
 res://Pages/BookA/puzzle_5_6.tscn = >5< >6<
-res://Pages/BookA/_Vertex2_lock_page.tscn = >vertex2<
+res://Pages/BookA/_Vertex2_lock_page.tscn
 
-# VERTEX 2
+# VERTEX 2 - Antagonistic
 
-res://Pages/BookA/_Vertex2_page.tscn
+res://Pages/BookA/_Vertex2_page.tscn = >vertex2<
+res://Pages/BookA/puzzle_7_8.tscn = >7< >8<
+res://Pages/BookA/puzzle_9_10.tscn = >9< >10<
+res://Pages/BookA/puzzle_11_12.tscn = >11< >12<
+res://Pages/BookA/puzzle_13_14.tscn = >13< >14<
+res://Pages/BookA/_Vertex3_lock_page.tscn
+
+# VERTEX 3 - Alignment
+
+res://Pages/BookA/_Vertex3_page.tscn = >vertex3<
+res://Pages/BookA/puzzle_15_16.tscn = >15< >16<
+res://Pages/BookA/puzzle_17_18.tscn = >17< >18<
+res://Pages/BookA/puzzle_19_20.tscn = >19< >20<
+res://Pages/BookA/puzzle_21_22.tscn = >21< >22<
+res://Pages/BookA/_Vertex4_lock_page.tscn
+
+# VERTEX 4 - Asymmetry
+
+res://Pages/BookA/_Vertex4_page.tscn = >vertex4<
+res://Pages/BookA/puzzle_23_24.tscn = >23< >24<
+res://Pages/BookA/puzzle_25_26_27.tscn = >25< >26< >27<
+res://Pages/BookA/puzzle_28_29.tscn = >28< >29<
+res://Pages/BookA/_Vertex5_lock_page.tscn
+
+# VERTEX 5 - Application
+
+res://Pages/BookA/_Vertex5_page.tscn = >vertex5<

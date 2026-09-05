@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bfta1msqcnvkj"]
+
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_r0w8p"]
+[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_0u06v"]
+[ext_resource type="Texture2D" uid="uid://c5yatx1pmmjax" path="res://Sprites/book stuff/lock/page_with_lock.png" id="3_xfg2m"]
+[ext_resource type="PackedScene" uid="uid://ctagq5xqnqie0" path="res://Lock.tscn" id="4_lruti"]
+[ext_resource type="PackedScene" uid="uid://ddcsw2jvn76mn" path="res://Pages/BookA/puzzle_7_8.tscn" id="6_0u06v"]
+[ext_resource type="PackedScene" uid="uid://d1kq4pa5wiyqf" path="res://Pages/BookA/puzzle_9_10.tscn" id="7_xfg2m"]
+[ext_resource type="PackedScene" uid="uid://b3xl3brhh20pr" path="res://Pages/BookA/puzzle_11_12.tscn" id="8_bjsmv"]
+[ext_resource type="PackedScene" uid="uid://w7gmo2c6vncb" path="res://Pages/BookA/puzzle_13_14.tscn" id="9_p6w12"]
+
+[node name="Page" type="Node2D" unique_id=1566188694 node_paths=PackedStringArray("lock")]
+script = ExtResource("1_r0w8p")
+is_next_page_locked = true
+lock = NodePath("RightPage/Lock")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
+
+[node name="LeftPage" type="Sprite2D" parent="." unique_id=1644814259]
+texture = ExtResource("2_0u06v")
+offset = Vector2(-364, 0)
+flip_h = true
+
+[node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
+texture = ExtResource("3_xfg2m")
+offset = Vector2(364, 0)
+
+[node name="Lock" parent="RightPage" unique_id=683368118 instance=ExtResource("4_lruti")]
+PagesToOpen = Array[PackedScene]([ExtResource("6_0u06v"), ExtResource("7_xfg2m"), ExtResource("8_bjsmv"), ExtResource("9_p6w12")])

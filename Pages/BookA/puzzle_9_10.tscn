@@ -1,14 +1,14 @@
-[gd_scene format=4 uid="uid://cx8a3k8utpdxc"]
+[gd_scene format=3 uid="uid://d1kq4pa5wiyqf"]
 
-[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_vjqb4"]
-[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_v4pse"]
-[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="3_qifah"]
-[ext_resource type="PackedScene" uid="uid://g4lrhuyfeygk" path="res://number.tscn" id="3_v4pse"]
-[ext_resource type="Texture2D" uid="uid://cluedv3cusxm7" path="res://Sprites/tileset.png" id="4_aeqwv"]
-[ext_resource type="Script" uid="uid://c3a4yr4orkfm0" path="res://Scripts/PuzzleGrid.gd" id="5_drg0w"]
+[ext_resource type="Script" uid="uid://b3n50net0ykln" path="res://Scripts/Page.gd" id="1_66omq"]
+[ext_resource type="Texture2D" uid="uid://bputldnents3h" path="res://Sprites/book stuff/page.png" id="2_eywlv"]
+[ext_resource type="Texture2D" uid="uid://cluedv3cusxm7" path="res://Sprites/tileset.png" id="3_2beif"]
+[ext_resource type="Script" uid="uid://c3a4yr4orkfm0" path="res://Scripts/PuzzleGrid.gd" id="4_4f1mn"]
+[ext_resource type="FontFile" uid="uid://wkf0inhs4yts" path="res://BRLNSR.TTF" id="5_1rh8f"]
+[ext_resource type="PackedScene" uid="uid://g4lrhuyfeygk" path="res://number.tscn" id="6_lslst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a1v1n"]
-texture = ExtResource("4_aeqwv")
+texture = ExtResource("3_2beif")
 texture_region_size = Vector2i(98, 98)
 0:0/0 = 0
 1:0/0 = 0
@@ -36,52 +36,45 @@ tile_size = Vector2i(98, 98)
 sources/0 = SubResource("TileSetAtlasSource_a1v1n")
 
 [sub_resource type="LabelSettings" id="LabelSettings_h5uhw"]
-font = ExtResource("3_qifah")
+font = ExtResource("5_1rh8f")
 font_size = 80
 
 [node name="Page" type="Node2D" unique_id=1566188694 node_paths=PackedStringArray("GridsToSave")]
-script = ExtResource("1_vjqb4")
+script = ExtResource("1_66omq")
 GridsToSave = [NodePath("RightPage/Tiles/Tokens"), NodePath("LeftPage/Tiles/Tokens")]
-metadata/_edit_vertical_guides_ = [-931.0]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1419383332]
 
 [node name="LeftPage" type="Sprite2D" parent="." unique_id=557826736]
-texture = ExtResource("2_v4pse")
+texture = ExtResource("2_eywlv")
 offset = Vector2(-364, 0)
 flip_h = true
 
 [node name="Tiles" type="TileMapLayer" parent="LeftPage" unique_id=504928252]
 position = Vector2(0, 49)
-tile_map_data = PackedByteArray("AAD7////AAAAAAAAAAD8////AAAAAAAAAAD9////AAAAAAAAAAD6////AAABAAEAAAD8//7/AAAAAAEAAAD9//7/AAAAAAEAAAD7//7/AAAAAAEAAAA=")
+tile_map_data = PackedByteArray(0, 0, 252, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 252, 255, 252, 255, 0, 0, 0, 0, 1, 0, 0, 0, 252, 255, 253, 255, 0, 0, 0, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_efio1")
 
 [node name="Solution" type="TileMapLayer" parent="LeftPage/Tiles" unique_id=878957737]
-tile_map_data = PackedByteArray("AAD7////AAAAAAMAAAD8////AAAAAAMAAAD9////AAAAAAMAAAA=")
+tile_map_data = PackedByteArray(0, 0, 252, 255, 254, 255, 0, 0, 0, 0, 3, 0, 0, 0, 252, 255, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 252, 255, 255, 255, 0, 0, 1, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_efio1")
 
 [node name="Tokens" type="TileMapLayer" parent="LeftPage/Tiles" unique_id=1689753027]
 tile_set = SubResource("TileSet_efio1")
-script = ExtResource("5_drg0w")
+script = ExtResource("4_4f1mn")
 
-[node name="Button4" parent="LeftPage" unique_id=698344605 instance=ExtResource("3_v4pse")]
+[node name="1" parent="LeftPage" unique_id=1865949800 instance=ExtResource("6_lslst")]
 offset_left = -392.0
+offset_top = -343.0
 offset_right = -294.0
+offset_bottom = -245.0
 text = "1"
 
-[node name="Button6" parent="LeftPage" unique_id=1555333150 instance=ExtResource("3_v4pse")]
-text = "1"
-
-[node name="Button7" parent="LeftPage" unique_id=1673313446 instance=ExtResource("3_v4pse")]
-offset_left = -588.0
-offset_top = -49.0
-offset_right = -490.0
-offset_bottom = 49.0
-text = "3"
-
-[node name="1" parent="LeftPage" unique_id=143784790 instance=ExtResource("3_v4pse")]
-offset_left = -490.0
-offset_right = -392.0
+[node name="2" parent="LeftPage" unique_id=698344605 instance=ExtResource("6_lslst")]
+offset_left = -392.0
+offset_top = -245.0
+offset_right = -294.0
+offset_bottom = -147.0
 text = "1"
 
 [node name="Label4" type="Label" parent="LeftPage" unique_id=1062826054]
@@ -97,26 +90,27 @@ offset_right = -952.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "3."
+text = "9."
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
 
 [node name="RightPage" type="Sprite2D" parent="." unique_id=143123537]
-texture = ExtResource("2_v4pse")
+texture = ExtResource("2_eywlv")
 offset = Vector2(364, 0)
 
 [node name="Tiles" type="TileMapLayer" parent="RightPage" unique_id=189666035]
 position = Vector2(0, 49)
-tile_map_data = PackedByteArray("AAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAP3/AAAAAAEAAAACAAAAAAABAAEAAAA=")
+tile_map_data = PackedByteArray(0, 0, 3, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 3, 0, 1, 0, 0, 0, 3, 0, 2, 0, 0, 0, 3, 0, 1, 0, 0, 0)
 tile_set = SubResource("TileSet_efio1")
 
 [node name="Solution" type="TileMapLayer" parent="RightPage/Tiles" unique_id=151878063]
-tile_map_data = PackedByteArray("AAADAP//AAAAAAMAAAADAAAAAAAAAAMAAAADAP7/AAABAAMAAAA=")
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray(0, 0, 3, 0, 255, 255, 0, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 3, 0, 254, 255, 0, 0, 1, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_efio1")
 
 [node name="Tokens" type="TileMapLayer" parent="RightPage/Tiles" unique_id=833809417]
 tile_set = SubResource("TileSet_efio1")
-script = ExtResource("5_drg0w")
+script = ExtResource("4_4f1mn")
 
 [node name="Label3" type="Label" parent="RightPage" unique_id=520385378]
 modulate = Color(0.50980395, 0.25490198, 0, 0.5882353)
@@ -131,20 +125,20 @@ offset_right = 322.0
 offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "4."
+text = "10."
 label_settings = SubResource("LabelSettings_h5uhw")
 horizontal_alignment = 1
 
-[node name="1" parent="." unique_id=247642033 instance=ExtResource("3_v4pse")]
+[node name="2" parent="RightPage" unique_id=2010156589 instance=ExtResource("6_lslst")]
 offset_left = 294.0
-offset_top = -245.0
+offset_top = 147.0
 offset_right = 392.0
-offset_bottom = -147.0
-text = "2"
+offset_bottom = 245.0
+text = "1"
 
-[node name="2" parent="." unique_id=159054577 instance=ExtResource("3_v4pse")]
-offset_left = 196.0
-offset_top = 49.0
-offset_right = 294.0
-offset_bottom = 147.0
+[node name="3" parent="RightPage" unique_id=291044701 instance=ExtResource("6_lslst")]
+offset_left = 294.0
+offset_top = 245.0
+offset_right = 392.0
+offset_bottom = 343.0
 text = "1"

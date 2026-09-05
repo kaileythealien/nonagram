@@ -15,7 +15,14 @@ func PreOpen() -> void:
 
 func TryToOpen() -> void:
 	if not SaveSystem.SavedData.keys().has(ConnectedPage):
-		push_error("MURDER EVERYONE YOU KNOW!!!! HOW DID THIS EVEN HAPPEN Error in lock number save data")
+		animation_player.play("what")
+		await animation_player.animation_finished
+		animation_finished.emit()
+		return
+	elif not SaveSystem.SavedData[ConnectedPage]["has_been_touched"]:
+		animation_player.play("what")
+		await animation_player.animation_finished
+		animation_finished.emit()
 		return
 	var save = SaveSystem.SavedData[ConnectedPage]
 	

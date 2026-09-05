@@ -6,6 +6,8 @@ const LOCK_NUMBER = preload("uid://t74b87u52m8t")
 @export var PagesToOpen: Array[PackedScene]
 @export var ringsize: float = 275.0
 @onready var page: Page = $"../.."
+var is_open: bool = false
+var is_opening: bool = false
 
 var number_locks: Array[Sprite2D]
 
@@ -44,6 +46,7 @@ func SkipToWin() -> void:
 		number_lock.animation_player.play("opened")
 
 func TryToOpen():
+	is_opening = true
 	var will_open: bool = true
 	for number_lock in number_locks:
 		number_lock.TryToOpen()
@@ -55,17 +58,22 @@ func TryToOpen():
 			print_rich("[color=red]Lock not unlocked.[/color]")
 	if will_open:
 		Open()
+	else:
+		is_opening = false
 
 func Open():
 	animation_player.play("Open")
 	await animation_player.animation_finished
 	page.is_next_page_locked = false
+	is_opening = false
 
-"""
-var StringPath: String = page.resource_path
-var page_save_data: Dictionary = SaveSystem.SavedData[StringPath]
-"""
-
+func _input(event: InputEvent) -> void:
+	if is_open: return
+	if is_opening: return
+	if event.is_action_pressed("NextPage"):
+		TryToOpen()
 
 func _on_button_button_down() -> void:
+	if is_open: return
+	if is_opening: return
 	TryToOpen()
