@@ -16,7 +16,7 @@ func SavePage(_page: Page):
 	
 	#IF NOT NEEDED
 	if not page_save_dict: return
-	if page_save_dict["tile_data"] == []: return
+
 	
 	var pageid: String = page_save_dict["path_to_page"]
 	

@@ -1,0 +1,286 @@
+[gd_scene format=3 uid="uid://t74b87u52m8t"]
+
+[ext_resource type="Texture2D" uid="uid://dl8lrqwifgxe1" path="res://Sprites/book stuff/lock/number_default.png" id="1_mlgfj"]
+[ext_resource type="Texture2D" uid="uid://dju71wgextdaj" path="res://Sprites/book stuff/lock/screen_0.png" id="2_x3cfu"]
+[ext_resource type="Script" uid="uid://bdvhgg11inocl" path="res://Scripts/lock_number.gd" id="2_xr8vy"]
+[ext_resource type="Texture2D" uid="uid://b4sha7flou6is" path="res://Sprites/book stuff/lock/screen_1.png" id="3_xr8vy"]
+[ext_resource type="Texture2D" uid="uid://cqba7bvcxwiro" path="res://Sprites/book stuff/lock/screen_2.png" id="4_usixy"]
+[ext_resource type="Texture2D" uid="uid://c3lafvasbok8w" path="res://Sprites/book stuff/lock/icon_locked.png" id="5_2anaq"]
+[ext_resource type="Texture2D" uid="uid://bhq0aqo6p01i3" path="res://Sprites/book stuff/lock/icon_none.png" id="7_2anaq"]
+[ext_resource type="Texture2D" uid="uid://bk43udu7v8l3m" path="res://Sprites/book stuff/lock/icon_loading_bar.png" id="8_67mdi"]
+[ext_resource type="Texture2D" uid="uid://dglo2b72fvb2d" path="res://Sprites/book stuff/lock/icon_unlocked.png" id="9_pracf"]
+[ext_resource type="Texture2D" uid="uid://wphn8f7exd75" path="res://Sprites/book stuff/lock/icon_cross.png" id="10_67mdi"]
+[ext_resource type="Texture2D" uid="uid://c2j474vrc6k0c" path="res://Sprites/book stuff/lock/glow.png" id="11_pracf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yq7eg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x3cfu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_xr8vy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_usixy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8hoj8"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_0nom8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_2anaq")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.5411765, 0.5058824, 0.39607844, 0.4117647)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.40478027, 0.3811154, 0.36426067, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_67mdi"]
+resource_name = "correct"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1.8916668, 1.925, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_2anaq"), ExtResource("8_67mdi"), ExtResource("7_2anaq"), ExtResource("5_2anaq"), ExtResource("9_pracf")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5, 1.7916667, 1.8916668, 2.025, 2.5, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.38431373, 1, 0.52156866, 0.4117647)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1.8916668, 1.925),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 19.198621771937624, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.5, 2.5, 2.5333333, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.58711267, 0.55845034, 0.5011159, 1), Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.75190145, 1, 0.4899807, 1), Color(0.4563905, 0.7807334, 7.70092e-07, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.5000002, 2.5333335, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.9973856, 0.91666687, 0.92091525, 0.07810438), Color(0.20392157, 0.5294118, 0, 0.34117648), Color(0.9973856, 0.91666687, 0.92091525, 0.07810438)]
+}
+
+[sub_resource type="Animation" id="Animation_pracf"]
+resource_name = "incorrect"
+length = 3.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1.8916668, 1.925, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("5_2anaq"), ExtResource("8_67mdi"), ExtResource("7_2anaq"), ExtResource("5_2anaq"), ExtResource("10_67mdi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.5, 1.7916667, 1.8916668, 2.025, 2.5, 2.5333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(0.5411765, 0.5058824, 0.39607844, 0.4117647), Color(1, 0.45490196, 0.49019608, 0.4117647)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 1.8916668, 1.925),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 19.198621771937624, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.5, 2.5, 2.5333333, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.58711267, 0.55845034, 0.5011159, 1), Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.40478027, 0.3811154, 0.36426067, 1), Color(0.99999684, 0.4517216, 0.48817605, 1), Color(0.9268493, 0, 0.06573525, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D2:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.5, 2.5333335, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(0.96862745, 0, 0.050980393, 0.29803923), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pvlbg"]
+resource_name = "opened"
+length = 0.033333335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("9_pracf")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4wslp"]
+_data = {
+&"RESET": SubResource("Animation_0nom8"),
+&"correct": SubResource("Animation_67mdi"),
+&"incorrect": SubResource("Animation_pracf"),
+&"opened": SubResource("Animation_pvlbg")
+}
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1831650602]
+z_index = 5
+texture = ExtResource("1_mlgfj")
+script = ExtResource("2_xr8vy")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=867135746]
+self_modulate = Color(0.40478027, 0.3811154, 0.36426067, 1)
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_yq7eg")
+frame_progress = 0.20863579
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1700335572]
+self_modulate = Color(0.5411765, 0.5058824, 0.39607844, 0.4117647)
+z_index = 8
+material = SubResource("CanvasItemMaterial_8hoj8")
+position = Vector2(1, 0)
+texture = ExtResource("5_2anaq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1449140496]
+libraries/ = SubResource("AnimationLibrary_4wslp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1242211689]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 10
+material = SubResource("CanvasItemMaterial_8hoj8")
+position = Vector2(1, 0)
+scale = Vector2(1.3036437, 1.595092)
+texture = ExtResource("11_pracf")
+
+[node name="Button" type="Button" parent="Sprite2D2" unique_id=753211033]
+offset_left = -52.92857
+offset_top = -41.376923
+offset_right = 50.62733
+offset_bottom = 41.376923
+flat = true
+
+[connection signal="button_down" from="Sprite2D2/Button" to="." method="_on_button_button_down"]

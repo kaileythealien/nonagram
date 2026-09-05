@@ -13,6 +13,7 @@ var has_been_touched: bool = false
 var is_looking_up_definition: bool = false
 var looking_up_from_page: int = 0
 signal animation_finished
+@export var lock: Sprite2D
 
 ### CONSTANT
 @export var page_turn_speed: float = 0.05
@@ -108,9 +109,14 @@ func SavePage() -> Dictionary:
 	return dict_to_return
 
 func LoadPage(page_data):
+	
+	if page_data.is_empty(): return
+	
+	if lock and not page_data["is_next_page_locked"]:
+		lock.SkipToWin()
+	
 	#IF DOESNT NEED LOADING
 	if GridsToSave.is_empty(): return
-	if page_data.is_empty(): return
 	if not page_data.keys().has("tile_data"): return
 	
 	#FOR EACH GRID SET THE GRID TO GRID DUH
@@ -121,6 +127,9 @@ func LoadPage(page_data):
 	is_solution_correct = page_data["is_solved"]
 	has_been_touched = page_data["has_been_touched"]
 	is_next_page_locked = page_data["is_next_page_locked"]
+	
+	
+	
 
 
 func LookupDefinition(id: String, allow_return: bool):

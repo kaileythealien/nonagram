@@ -31,6 +31,10 @@ func GetPathFromID(id: int = 0) -> String:
 	if id < 0 or id > all_pages_array.size()+1:
 		#temporary solution
 		return all_pages_array[1].split(" = ")[0]
+	#CHECK FOR ERRORS
+	if id+1>all_pages_array.size():
+		return all_pages_array[1].split(" = ")[0]
+		
 	return all_pages_array[id].split(" = ")[0]
 
 func GetPathByDefinition(id: String = "1") -> Array:
